@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="jquery-1.9.1.js"></script>
+<script type="text/javascript">  
+/*
+   $(function () {
+    $(".showbtn").click(function () {
+        $("#bg").css({
+            display: "block", height: $(document).height()
+        });
+        var $box = $('.box');
+        $box.css({
+            //设置弹出层距离左边的位置
+            left: ($("body").width() - $box.width()) / 2  + "px",
+            //设置弹出层距离上面的位置
+            top: ($(window).height() - $box.height()) / 2 + $(window).scrollTop() + "px",
+            display: "block"//scrollTop()返回的就是该元素在可见区域之上被隐藏部分的高度
+        });
+    });
+    //点击关闭按钮的时候，遮罩层关闭
+    $(".close").click(function () {
+        $("#bg,.box").css("display", "none");
+    });
+});  
+*/
+$(function(){
+	$(".showbtn").click(function(){
+		$("#bg").css({display:"block",height:$(document).height()});
+		var $box=$(".box");
+		$box.css({
+			left:($("body").width() - $box.width())/2 +"px",
+			top:($(window).height() -$box.height())/2 + $(window).scrollTop()+"px",
+			display:"block"
+			})
+		});
+		$(".close").click(function(){
+		$("#bg,.box") .hide();
+		})
+	}
+	
+)
+
+//javascript:void(0);javascript:是伪协议，表示url的内容通过javascript执行。void(0)表示不作任何操作，这样会防止链接跳转到其他页面
+</script>  
+<style type="text/css">  
+/* box */
+.box,.box1{position:absolute;width:600px;left:50%; top:30px;height:auto;z-index:100;background-color:#fff;border:1px #ddd solid;padding:1px;}
+.box h2,.box1 h2{height:25px;font-size:14px;background-color:#aaa;position:relative;padding-left:10px;line-height:25px;color:#fff;}
+.box h2 a,.box1 h2 a{position:absolute;right:5px;font-size:14px;color:#fff;}
+.box .list{ background:url(banner22.jpg); width:600px; height:280px;}
+.box1 .list{ background: url(1.jpg); width:600px; height:280px;}
+.showbtn {font:bold 24px '微软雅黑';}
+.showbtn1{font:bold 24px '微软雅黑';}
+#bg{background-color:#666;position:absolute;z-index:69;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;} 
+          
+</style>  
+</head>
+
+<body>
+<p class="showbtn"><a href="#">显示遮罩层</a></p>
+<p class="showbtn1"><a href="#">显示遮罩dd层</a></p>
+<div id="bg"></div>
+<div class="box" style="display:none">
+    <h2>宝通国际成功案例<a href="#" class="close">关闭</a></h2>
+    <div class="list">
+    </div>
+</div>
+<div class="box1" style="display:none">
+    <h2>宝通国际成功案例<a href="#" class="close">关闭</a></h2>
+    <div class="list">
+    </div>
+</div>
+</body>
+</html>
